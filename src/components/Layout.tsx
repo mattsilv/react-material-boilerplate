@@ -1,6 +1,7 @@
 import { Box, Container } from "@mui/material";
 import Navbar from "./Navbar/Navbar";
 import MainContent from "./MainContent";
+import Footer from "./Footer/Footer";
 
 export default function Layout() {
   return (
@@ -27,10 +28,12 @@ export default function Layout() {
             md: "900px",
           },
           overflow: "hidden",
+          flex: "1 0 auto",
         }}
       >
         <MainContent />
       </Container>
+      <Footer />
     </Box>
   );
 }

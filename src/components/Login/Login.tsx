@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  Typography,
-  Card,
-  CardContent,
-  Stack,
-  Button,
-  Box,
-} from "@mui/material";
+import { Typography, Card, CardContent, Stack, Button } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import { loginStyles } from "./LoginStyles.ts";
 import LegalModal from "../Legal/LegalModal";
