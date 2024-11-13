@@ -1,0 +1,40 @@
+CORE DEPENDENCIES
+@mui/material, @mui/icons-material: ^5.15.11
+@mui/x-data-grid: ^6.19.6
+react: ^18.2.0
+leaflet: ^1.9.4, react-leaflet: ^4.2.1
+typescript: ^5.6.3
+
+COMPONENT ARCHITECTURE
+1. Folder Structure
+- One folder per feature/component: /Map, /DataTable, etc.
+- Include all related files in component folder:
+  Component.tsx
+  ComponentStyles.ts (if needed)
+  ComponentConfig.ts (if needed)
+  ComponentTypes.ts (if needed)
+
+2. Component Design
+- Keep components focused and single-purpose
+- Extract reusable logic to custom hooks
+- Use TypeScript interfaces for props
+- Avoid prop drilling - use context when needed
+
+3. State Management
+- Local state for UI-only concerns
+- Context for shared state (theme, features)
+- Props for component-specific data
+
+4. File Organization
+/src
+  /components     # Feature-based folders
+  /contexts      # App-wide state
+  /types        # Shared TypeScript types
+  /data         # Mock data, constants
+  /theme        # MUI theme customization
+
+CURSOR USAGE
+- Tag component folders when working on features
+- Keep related files in same folder for better AI context
+- Use TypeScript for better type hints
+- Maintain clear file structure for AI navigation
