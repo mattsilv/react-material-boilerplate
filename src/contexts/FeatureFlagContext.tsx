@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from "react";
-import { FeatureFlags, FeatureFlagContextType } from "../types/feature-flags";
+import { FeatureFlags } from "../types/feature-flags";
 
 const FeatureFlagContext = createContext<FeatureFlags | undefined>(undefined);
 
