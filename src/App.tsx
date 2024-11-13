@@ -2,8 +2,8 @@ import { useMemo } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { createTheme, Theme } from "@mui/material/styles";
 import Layout from "./components/Layout";
-import { ColorModeProvider, useColorMode } from "./contexts/ColorModeContext";
-import { FeatureFlagProvider } from "./contexts/FeatureFlagContext";
+import { ColorModeProvider, useColorMode } from "./lib/color-mode/context";
+import { FeatureFlagProvider } from "./lib/feature-flags/context";
 
 function AppContent() {
   const { mode } = useColorMode();

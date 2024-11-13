@@ -20,7 +20,7 @@ import {
   TableChart,
   Settings,
 } from "@mui/icons-material";
-import { useColorMode } from "../../contexts/ColorModeContext";
+import { useColorMode } from "../../lib/color-mode/context";
 import { navbarStyles } from "./NavbarStyles";
 
 const menuItems = [

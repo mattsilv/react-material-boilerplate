@@ -2,7 +2,7 @@ import { Typography, Stack, Box } from "@mui/material";
 import Login from "./Login/Login";
 import DataTable from "./DataTable/DataTable";
 import MapComponent from "./Map/MapComponent";
-import { useFeatureFlags } from "../contexts/FeatureFlagContext";
+import { useFeatureFlags } from "../lib/feature-flags/context";
 
 export default function MainContent() {
   const features = useFeatureFlags();
