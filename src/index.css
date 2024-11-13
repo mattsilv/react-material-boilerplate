@@ -14,8 +14,8 @@ html,
 body,
 #root {
   min-height: 100vh;
-  width: 100%;
-  max-width: 100%;
+  /* width: 100%; */
+  /* max-width: 100%; */
   overflow-x: hidden;
   position: relative;
 }
@@ -33,11 +33,17 @@ body {
   overscroll-behavior: none;
 }
 
-/* Force hardware acceleration */
+/* Remove hardware acceleration forcing */
+/* 
 * {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
   -o-transform: translateZ(0);
   transform: translateZ(0);
+}
+*/
+
+html {
+  overflow-y: scroll;
 }

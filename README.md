@@ -25,9 +25,9 @@ src/
   │   ├── Layout.tsx               # App layout structure
   │   ├── MainContent.tsx          # Main content area
   │   └── Navbar.tsx               # Top navigation
-  ├── contexts/           # Global state
-  │   ├── ColorModeContext.tsx     # Theme management
-  │   └── FeatureFlagContext.tsx   # Feature toggles
+  ├── lib/                # Business logic
+  │   ├── color-mode/     # Theme management
+  │   └── feature-flags/  # Feature toggles
   ├── types/             # TypeScript definitions
   ├── data/              # Mock data
   └── theme/             # MUI customization
@@ -75,6 +75,42 @@ src/
 - Context for global state management
 - Extract reusable logic to custom hooks
 - Keep components focused and single-purpose
+
+## Deployment to GitHub Pages
+
+1. **Build and Deploy**
+
+   ```bash
+   # Build the production version
+   npm run build
+
+   # Delete the old gh-pages branch locally and remotely
+   git push origin --delete gh-pages
+   git branch -D gh-pages
+
+   # Create and push a new gh-pages branch with the latest build
+   git add dist -f
+   git commit -m "Deploy to GitHub Pages"
+   git subtree push --prefix dist origin gh-pages
+   ```
+
+If you still get a rejection error, you can force push:
+
+```bash
+# Alternative force push method if needed
+git push origin `git subtree split --prefix dist main`:gh-pages --force
+```
+
+The site will be available at: `https://mattsilv.github.io/react-material-boilerplate/`
+
+Note: Make sure your vite.config.ts has the correct base URL:
+
+```typescript
+export default defineConfig({
+  base: "/react-material-boilerplate/", // Matches your repository name
+  // ... other config
+});
+```
 
 ## Requirements
 

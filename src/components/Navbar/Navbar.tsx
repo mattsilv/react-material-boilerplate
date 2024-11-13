@@ -61,7 +61,24 @@ export default function Navbar() {
         </Toolbar>
       </AppBar>
 
-      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+        variant="temporary"
+        elevation={1}
+        ModalProps={{
+          keepMounted: true, // Better mobile performance
+          slotProps: {
+            backdrop: {
+              sx: navbarStyles.backdrop,
+            },
+          },
+        }}
+        PaperProps={{
+          sx: navbarStyles.drawerPaper,
+        }}
+      >
         <List sx={navbarStyles.drawer}>
           {menuItems.map((item) => (
             <ListItem
