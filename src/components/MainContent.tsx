@@ -1,68 +1,39 @@
-import {
-  Typography,
-  Card,
-  CardContent,
-  Stack,
-  Button,
-  TextField,
-  Alert,
-  Container,
-  Box,
-} from "@mui/material";
-import MapComponent from "./Map/MapComponent";
+import { Typography, Stack, Box } from "@mui/material";
+import Login from "./Login/Login";
 import DataTable from "./DataTable/DataTable";
+import MapComponent from "./Map/MapComponent";
 import { useFeatureFlags } from "../contexts/FeatureFlagContext";
 
 export default function MainContent() {
   const features = useFeatureFlags();
 
   return (
-    <Container maxWidth="sm">
-      <Stack spacing={4}>
+    <Box sx={{ width: "100%", overflow: "hidden" }}>
+      <Stack
+        spacing={{ xs: 2, sm: 4 }}
+        sx={{
+          width: "100%",
+          maxWidth: "100%",
+        }}
+      >
         <Typography
           variant="h3"
           component="h1"
           sx={{
             fontWeight: 700,
             letterSpacing: "-0.5px",
+            fontSize: { xs: "2rem", sm: "3rem" },
+            wordBreak: "break-word",
           }}
         >
           Hello World
         </Typography>
 
-        <Card>
-          <CardContent>
-            <Stack spacing={3}>
-              <TextField label="Email" variant="outlined" fullWidth />
-              <Box sx={{ width: "100%", maxWidth: "320px", mx: "auto" }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  fullWidth
-                  sx={{
-                    textTransform: "none",
-                    py: 1.5,
-                  }}
-                >
-                  Get Started
-                </Button>
-              </Box>
-            </Stack>
-          </CardContent>
-        </Card>
-
+        <Login />
         <DataTable />
 
-        {features.showMap && (
-          <Card>
-            <CardContent>
-              <MapComponent height={300} />
-            </CardContent>
-          </Card>
-        )}
-
-        <Alert severity="success">Welcome to your new React application!</Alert>
+        {features.showMap && <MapComponent height={300} />}
       </Stack>
-    </Container>
+    </Box>
   );
 }
